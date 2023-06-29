@@ -12,10 +12,10 @@ You can also run `installer-for-git-bash.sh` to quickly achieve the same.
 The installer relies on the following function:
 
 ```bash
-function sourceIfExists() { 
-  if [ -f "$1" ]; then 
-    . "$1" 
-  fi 
+function sourceIfExists() {
+  if [ -f "$1" ]; then
+    . "$1"
+  fi
 }
 ```
 
