@@ -18,8 +18,16 @@ function pathToUnixStyle {
   fi
 }
 
-function cd {
+function isWindowsShortcut {
   if [ ".lnk" = "${1:(-4)}" ] && [ -f "$1" ] ; then
+    true
+  else
+    false
+  fi
+}
+
+function cd {
+  if isWindowsShortcut "$1" ; then
     local path
     path="$(pathToWindowsStyle "$1")"
     local getShortcutTarget
